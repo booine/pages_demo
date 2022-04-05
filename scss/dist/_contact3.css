@@ -1,0 +1,59 @@
+.contact #content .content {
+  padding: 100px 0;
+}
+.contact #content .title {
+  font-size: 18px;
+}
+.contact #content p {
+  padding-bottom: 30px;
+}
+.contact #content .contact-info {
+  text-transform: capitalize;
+  color: #7e7e7e;
+}
+.contact #content .contact-info .info {
+  margin-bottom: 10px;
+}
+.contact #content .contact-info a {
+  text-decoration: none;
+  color: #7e7e7e;
+}
+.contact #content .question .col-12 {
+  padding: 0 15px;
+}
+.contact #footer.dark .box-parent {
+  padding: 40px 0;
+  text-align: center;
+}
+.contact #footer.dark .box-parent .a-block {
+  display: block;
+}
+.contact #footer.dark .box-parent img {
+  margin: 0 auto;
+}
+.contact #footer.dark .box-parent .box2 {
+  margin: 50px 0 50px 0;
+  display: inline-block;
+}
+.contact #footer.dark .box-parent .social-media,
+.contact #footer.dark .box-parent .copyright {
+  float: none;
+}
+.contact #footer.dark .box-parent .social-media a {
+  color: white;
+  border-color: white;
+  background: #222;
+  transition: all 0.3s linear;
+}
+.contact #footer.dark .box-parent .social-media a:hover {
+  color: black;
+  background: white;
+}
+.contact #footer.dark .box-parent .copyright {
+  display: block;
+  border-top: 2px dashed #7e7e7e;
+  padding-top: 40px;
+}
+.contact #footer.dark .box-parent .copyright .title {
+  color: #7e7e7e;
+}

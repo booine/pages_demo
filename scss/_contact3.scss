@@ -1,0 +1,95 @@
+@use 'basic';
+
+.contact {
+
+
+    #content {
+        .content {
+            padding: 100px 0;
+        }
+
+        .title {
+            font-size: 18px;
+        }
+
+        p {
+            padding-bottom: 30px;
+        }
+
+        .contact-info {
+            text-transform: capitalize;
+            color: basic.$gray-text;
+
+            .info {
+                margin-bottom: 10px;
+            }
+
+            a {
+                text-decoration: none;
+                color: basic.$gray-text;
+
+            }
+        }
+
+        .question {
+            .col-12 {
+                padding: 0 15px;
+            }
+        }
+
+
+    }
+
+    #footer.dark {
+        .box-parent {
+            padding: 40px 0;
+            text-align: center;
+
+            .a-block {
+                display: block;
+            }
+
+            img {
+                margin: 0 auto;
+            }
+
+            .box2 {
+                margin: 50px 0 50px 0;
+                display: inline-block;
+
+            }
+
+            .social-media,
+            .copyright {
+                float: none;
+            }
+
+            .social-media {
+                a {
+                    color: white;
+                    border-color: white;
+                    background: #222;
+                    transition: all .3s linear;
+
+                    &:hover {
+                        color: black;
+                        background: white;
+                    }
+                }
+            }
+
+            .copyright {
+                display: block;
+                border-top: 2px dashed #7e7e7e;
+                padding-top: 40px;
+
+                .title {
+                    color: basic.$gray-text;
+                }
+
+            }
+        }
+    }
+
+
+}

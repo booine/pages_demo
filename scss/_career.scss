@@ -1,0 +1,47 @@
+@use 'basic';
+
+.career {
+    #content {
+
+        .careers,
+        .apply-now {
+            padding: 100px 0;
+        }
+
+        .careers {
+            .col-6 {
+                margin-bottom: 30px;
+            }
+
+            .bordered {
+                padding: 50px 30px;
+                border: 1px solid #f2f2f2;
+
+                a {
+                    display: inline-block;
+                    margin-top: 30px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: #cbcbcb;
+                    transition: all .3s;
+
+                    &::after {
+                        font-family: 'fontello';
+                        content: '\f178';
+                        padding-left: 15px;
+                    }
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+
+        .col-center {
+            display: inline-block;
+            margin-top: 30px;
+            text-align: center;
+        }
+    }
+}

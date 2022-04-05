@@ -1,0 +1,81 @@
+.ourclients #content .feature {
+  padding: 100px 0;
+  background-image: url(https://picsum.photos/id/851/1920/1080);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+  text-align: center;
+  color: white;
+}
+.ourclients #content .feature .title {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.ourclients #content .feature i {
+  display: block;
+  padding-bottom: 30px;
+  font-size: 36px;
+  color: #d6b161;
+}
+.ourclients #content .feature p {
+  color: white;
+}
+.ourclients #content .team-menber {
+  padding: 100px 0;
+}
+.ourclients #content .member .name {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #333;
+}
+.ourclients #content .member .title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: #a5a5a5;
+}
+.ourclients #content .cover h3 {
+  margin: 35px 0;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+.ourclients #content .cover .social-media {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.ourclients #content .cover .social-media ul {
+  display: inline-block;
+}
+.ourclients #content .cover .social-media li {
+  float: left;
+  margin: 0 10px;
+}
+.ourclients #content .cover .social-media a {
+  text-decoration: none;
+  color: #222;
+}
+.ourclients #content .gray-bg {
+  padding: 100px 0;
+  text-align: center;
+}
+.ourclients #content .gray-bg .count {
+  font-size: 36px;
+}
+.ourclients #content .gray-bg h4 {
+  margin: 0;
+  color: #323232;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.ourclients #content .clients {
+  padding: 100px 0;
+}
+.ourclients .summary i {
+  font-size: 36px;
+}

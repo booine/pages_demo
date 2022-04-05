@@ -1,0 +1,27 @@
+.about #content .feature {
+  padding: 100px 0;
+  background-image: url(https://picsum.photos/id/851/1920/1080);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+}
+.about #content .gray-bg {
+  padding: 100px 0;
+  text-align: center;
+}
+.about #content .gray-bg .count {
+  font-size: 36px;
+}
+.about #content .gray-bg h4 {
+  margin: 0;
+  color: #323232;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.about #content .clients {
+  padding: 100px 0;
+}
+.about .summary i {
+  font-size: 36px;
+}

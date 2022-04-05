@@ -1,0 +1,85 @@
+.ourclients #content .bounce .title {
+  font-size: 18px;
+}
+.ourclients #content .bounce p {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.ourclients #content .feature {
+  padding: 100px 0;
+  background-image: url(https://picsum.photos/id/851/1920/1080);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+  text-align: center;
+  color: white;
+}
+.ourclients #content .feature .name {
+  margin: 0px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+.ourclients #content .feature i {
+  display: inline-block;
+  padding-bottom: 30px;
+  font-size: 60px;
+  color: #d6b161;
+}
+.ourclients #content .feature p {
+  font-size: 16px;
+  color: white;
+}
+.ourclients #content .number-clients {
+  padding: 0px;
+  padding-bottom: 100px;
+}
+.ourclients #content .number-clients .number {
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.ourclients #content .number-clients .number img {
+  width: 100%;
+}
+.ourclients #content .satisfied {
+  text-align: center;
+}
+.ourclients #content .satisfied .servers {
+  padding-top: 100px;
+}
+.ourclients #content .satisfied .servers h3.title {
+  margin: 0px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-size: 18px;
+}
+.ourclients #content .satisfied .servers i {
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+.ourclients #content .joinous {
+  text-align: center;
+  padding: 100px 0;
+}
+.ourclients #content .joinous .gray-back {
+  background: #f5f5f5;
+}
+.ourclients #content .joinous .tobe {
+  padding: 40px;
+}
+.ourclients #content .joinous .tobe .title {
+  margin: 0px;
+  letter-spacing: 1px;
+  color: #d6b161;
+}
+.ourclients #content .joinous .tobe p {
+  margin-top: 10px;
+}
+.ourclients .summary i {
+  font-size: 36px;
+}

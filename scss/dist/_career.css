@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.career #content .careers,
+.career #content .apply-now {
+  padding: 100px 0;
+}
+.career #content .careers .col-6 {
+  margin-bottom: 30px;
+}
+.career #content .careers .bordered {
+  padding: 50px 30px;
+  border: 1px solid #f2f2f2;
+}
+.career #content .careers .bordered a {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #cbcbcb;
+  transition: all 0.3s;
+}
+.career #content .careers .bordered a::after {
+  font-family: "fontello";
+  content: "";
+  padding-left: 15px;
+}
+.career #content .careers .bordered a:hover {
+  color: black;
+}
+.career #content .col-center {
+  display: inline-block;
+  margin-top: 30px;
+  text-align: center;
+}

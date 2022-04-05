@@ -1,0 +1,1084 @@
+@use 'about';
+@use 'ourclients2';
+@use 'ourteam2';
+@use 'service3';
+@use 'contact3';
+@use 'career';
+@use 'basic';
+// @use 'basic'，凡是引入變數的partial，還需要在變數前方加上「變數檔案的namespace.」-->「 basic.+變數名稱 」，例如：「 basic.$gray-text 」，才能compile成功唷～
+// 另外，語法 as *-->「@use 'basic' as *」 雖讓你可以不需使用 namespace. 就可存取變數，但也會造成維護不易，特別是專案越來越複雜之下，當變數一多容易產生命名的衝突。
+
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+img {
+    display: block;
+
+}
+
+p {
+    color: basic.$gray-text;
+    margin: 0;
+    line-height: 30px;
+}
+
+
+/* custom class */
+.container {
+    display: block;
+    width: 1170px;
+    margin: 0 auto;
+
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.clearfix,
+.row {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.row {
+    margin: 0 -10px;
+
+    &.bordered {
+        >div {
+            border: 1px solid #f2f2f2;
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+
+
+    }
+}
+
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-12 {
+    float: left;
+    padding: 0 30px;
+}
+
+.col-2 {
+    width: (100%/12)*2;
+}
+
+.col-3 {
+    width: (100%/12)*3;
+}
+
+.col-4 {
+    width: 33.3333333%;
+}
+
+.col-5 {
+    width: (100%/12)*5;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: (100%/12)*7;
+}
+
+.col-8 {
+    width: (100%/12)*8;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: #fff;
+    border: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #222;
+
+    &.bordered {
+        border: 1px solid black;
+
+        &.light-border {
+            border: 1px solid #f2f2f2;
+        }
+
+        &.full-width {
+            width: 100%;
+        }
+    }
+
+    &.rounded {
+        border-radius: 5px;
+    }
+
+    &.gold {
+        border: 0px;
+        background: basic.$branding-color;
+        color: white;
+        transition: all .2s linear;
+
+        &:hover {
+            background: #222;
+        }
+    }
+
+    &.black {
+        border: 0px;
+        background: #222;
+        color: white;
+        transition: all .2s linear;
+
+        &:hover {
+            background: basic.$branding-color;
+        }
+    }
+
+    &.com-white,
+    &.rec-white {
+        margin-top: 30px;
+        background: #fff;
+        border: 1px solid #f2f2f2;
+        color: black;
+        transition: all .2s linear;
+
+        &:hover {
+            border: 1px solid black;
+            background: black;
+            color: white;
+
+            &.rec-white {
+                border: 1px solid basic.$branding-color;
+                background: basic.$branding-color;
+            }
+        }
+    }
+
+
+}
+
+.progress-bar {
+    background: #eae8e8;
+    margin-bottom: 50px;
+    position: relative;
+
+    >div {
+        display: inline-block;
+    }
+
+    .progress {
+        padding-left: 10px;
+        background: black;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 10px;
+        line-height: 24px;
+        color: white;
+    }
+
+    .pin {
+        padding: 2px 5px;
+        background: #666;
+        border-radius: 15px;
+        position: relative;
+        // posotion:relative=以原本的位子為基準，做相對移動。
+        top: -35px;
+        left: -25px;
+        font-size: 12px;
+        color: white;
+    }
+
+    .arrow {
+        width: 0px;
+        height: 0px;
+        border-top: 5px solid #666;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid transparent;
+        position: relative;
+        // posotion:relative=以原本的位子為基準，做相對移動。
+        top: -19px;
+        left: -50px;
+    }
+}
+
+.feature-brief {
+    text-align: center;
+
+    &.white {
+        color: white;
+
+        i {
+
+            color: basic.$branding-color;
+        }
+
+        p {
+            color: white;
+        }
+    }
+
+    &.black {
+        color: black;
+
+        i {
+
+            color: black;
+        }
+
+        p {
+            color: #7e7e7e;
+        }
+    }
+
+    i {
+        display: block;
+        padding-bottom: 30px;
+        font-size: 36px;
+
+    }
+
+}
+
+.title-block {
+    margin-bottom: 30px;
+}
+
+.pricing {
+    .package {
+        text-align: center;
+        padding: 0 15px;
+
+        .box {
+            padding: 50px;
+            border: 1px solid #f2f2f2;
+        }
+
+        .name {
+            margin: 0;
+            padding-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        .value {
+            padding: 25px 0;
+            border-top: 1px solid #f2f2f2;
+            border-bottom: 1px solid #f2f2f2;
+
+            .price {
+                font-size: 42px;
+            }
+
+            .decimal {
+                margin-left: -10px;
+                font-size: 16px;
+            }
+
+            .duration {
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+        }
+
+        .features {
+            padding: 30px 0;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+
+        &.recomments {
+
+            .box {
+                background: #222;
+                color: white;
+            }
+
+            .name {
+                color: basic.$branding-color;
+            }
+
+            .value {
+                border-color: rgba(255, 255, 255, .2);
+            }
+
+            .features {
+                color: #7d7d7d;
+            }
+        }
+    }
+
+}
+
+.contact-form,
+.career-form {
+    text-transform: uppercase;
+    margin-top: 50px;
+
+    .col-6,
+    .col-12 {
+        margin-bottom: 15px;
+        padding: 0 15px;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+        color: basic.$gray-text;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        padding: 6px 12px;
+        border: 1px solid #e5e5e5;
+    }
+
+    textarea {
+        height: 95px;
+    }
+
+    select {
+        text-transform: capitalize;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .button {
+        margin-top: 0;
+    }
+
+}
+
+.career-form {
+    text-transform: capitalize;
+
+    .col-6,
+    .col-12 {
+        padding: 0 30px;
+    }
+
+    label {
+        color: #323232;
+    }
+
+    input,
+    textarea,
+    select {
+        margin-bottom: 30px;
+        border-radius: 4px;
+    }
+}
+
+
+/* header */
+#logo {
+    float: left;
+}
+
+#nav {
+    float: right;
+    text-transform: uppercase;
+    line-height: 100px;
+
+    li {
+        float: left;
+        height: 100px;
+    }
+
+    a {
+        padding: 0 12px;
+        text-decoration: none;
+        font-size: 13px;
+        color: #333;
+    }
+
+    .active a {
+        color: basic.$branding-color;
+    }
+}
+
+.boundary::after {
+    content: "|";
+    padding: 0 12px;
+}
+
+
+
+/* content */
+#content {
+    >div {
+        padding-top: 100px;
+
+        &.full-padding {
+            padding: 100px 0;
+        }
+
+        &.gray-bg {
+            background: #f5f5f5;
+        }
+
+        &:first-child {
+            padding-top: 0px;
+        }
+    }
+
+    >hr {
+        margin: 0;
+        border-top: 1px solid #eee;
+    }
+
+    h3.title {
+        margin-top: 0%;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: normal;
+        font-size: 24px;
+
+        &.size {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+    }
+
+    div.header {
+        padding: 200px 0;
+        background-image: url(https://picsum.photos/id/852/1920/1080);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+
+        &.gray-bg {
+            padding: 50px 0;
+            background-image: none;
+        }
+
+        .title {
+            float: left;
+            margin: 0%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: normal;
+            font-size: 24px;
+            color: white;
+
+            &.black {
+                padding-top: 10px;
+                font-size: 18px;
+                color: #000;
+            }
+        }
+
+        #breadcrumbs {
+            float: right;
+            padding: 15px;
+            background: rgba(0, 0, 0, .5);
+            border-radius: 3px;
+            letter-spacing: 1px;
+            font-size: 12px;
+
+            &.transparent {
+                background: transparent;
+            }
+
+            li {
+                float: left;
+                text-transform: uppercase;
+                color: white;
+
+                &.f5f5 {
+                    color: basic.$gray-text;
+                }
+
+                &.black {
+                    color: #000;
+                }
+
+                &::after {
+                    content: "/";
+                    margin: 0 5px;
+                }
+
+                &:last-child {
+                    &::after {
+                        content: "";
+                    }
+                }
+
+            }
+
+            a {
+                color: basic.$gray-text;
+                text-decoration: none;
+            }
+        }
+
+
+    }
+
+    .team-member {
+        padding: 100px 0;
+
+        .member {
+            .info {
+                padding: 20px 0;
+            }
+
+            .name {
+                margin: 0 0 5px 0;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: normal;
+                font-size: 14px;
+                color: #333;
+            }
+
+            .title {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 12px;
+                color: #a5a5a5;
+            }
+
+            .cover {
+                h3 {
+                    margin: 35px 0;
+                    font-weight: normal;
+                    font-size: 14px;
+                    letter-spacing: 4px;
+                }
+
+                .social-media {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    text-align: center;
+
+                    ul {
+                        display: inline-block;
+                    }
+
+                    li {
+                        float: left;
+                        margin: 0 10px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #222;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .feature {
+        padding: 100px 0;
+
+        .feature-item {
+            padding-left: 80px;
+            margin-bottom: 80px;
+            position: relative;
+
+            i {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 36px;
+            }
+
+            .title {
+                font-size: 18px;
+            }
+
+            .desc {
+                color: basic.$gray-text;
+            }
+        }
+    }
+
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 100px;
+
+    h2 {
+        margin: 0px;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: normal;
+        font-size: 24px;
+        color: #333;
+    }
+
+    hr {
+        width: 60px;
+        height: 2px;
+        margin: 0 auto;
+        border: 0px;
+        background: #595959;
+    }
+
+    p {
+        margin: 0;
+        margin-top: 25px;
+        color: basic.$gray-text;
+    }
+
+    &.big {
+        h2 {
+            padding: 0%;
+        }
+
+        p {
+            margin: 0%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .center {
+            margin: 0px auto;
+            width: 60%;
+            text-transform: capitalize;
+            font-size: 26px;
+            font-weight: 300;
+        }
+
+    }
+
+    &.bo-margin {
+        margin-bottom: 50px;
+
+        h2 {
+            padding: 0px;
+        }
+    }
+}
+
+.category {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 0 10px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .title {
+        position: absolute;
+        top: 35%;
+        right: 10%;
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+
+        &.dark {
+            color: #222;
+        }
+
+        &.light {
+            color: #fff;
+        }
+    }
+}
+
+.products li {
+    float: left;
+}
+
+.product {
+    padding: 0 10px;
+
+    .info {
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .title {
+        margin: 0;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: normal;
+            font-size: 14px;
+            color: #222;
+        }
+    }
+
+    .price {
+        letter-spacing: 1px;
+        font-size: 12px;
+        line-height: 30px;
+        color: basic.$gray-text;
+    }
+}
+
+.thumbnail {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .cover {
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+
+        /* position:absolute時若設定top、right、bottom、left皆為零，也有展開完全貼合父層的效果！ */
+        border: 20px solid rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.9);
+        opacity: 0;
+        transition: all .3s linear;
+
+        /* css3新功能：transition漸變效果 */
+
+        &:hover {
+            opacity: 1;
+        }
+
+        >a {
+            position: relative;
+            top: 40%;
+            text-decoration: none;
+            font-size: 32px;
+            color: #333;
+        }
+    }
+}
+
+.event {
+    padding: 150px 0;
+    background-image: url(https://picsum.photos/id/295/1920/1080);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+
+    .title,
+    .subtitle {
+        margin: 0;
+        font-weight: 100;
+        line-height: 1.5;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .title {
+        font-size: 70px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+}
+
+.featured {
+    padding-bottom: 100px;
+
+    img {
+        width: 100%;
+    }
+
+    .col-6 {
+        padding: 0 30px;
+    }
+
+    .info {
+        margin-top: 70px;
+        text-align: center;
+
+        .title,
+        .name {
+            text-transform: uppercase;
+        }
+
+        .title,
+        .price {
+            color: basic.$branding-color;
+        }
+
+        .name {
+            margin: 0;
+            margin-bottom: 10px;
+            font-weight: normal;
+
+            a {
+                text-decoration: none;
+                line-height: 1.5;
+                color: #333;
+            }
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 30px;
+            padding-top: 30px;
+        }
+
+        .price {
+            font-size: 26px;
+            font-weight: 100;
+        }
+    }
+}
+
+.outlets {
+    padding-bottom: 100px;
+}
+
+.outlet {
+    h3 {
+        margin: 0;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: normal;
+    }
+
+    .info {
+        color: basic.$gray-text;
+        line-height: 30px;
+
+        a {
+            color: basic.$gray-text;
+            text-decoration: none;
+        }
+    }
+
+    .map a {
+        color: basic.$branding-color;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
+
+/* footer */
+
+#footer {
+    padding: 80px 0;
+    background: #f5f5f5;
+    position: relative;
+
+    .logo {
+        padding: 20px;
+        background: #fff;
+        border: 5px solid #f5f5f5;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* css3:transform 2D/3D變形：translate位移。 */
+    }
+
+    .copyright {
+        float: left;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        .title {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #323232;
+        }
+    }
+
+    .social-media {
+        float: right;
+
+        li {
+            float: left;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #222;
+            border-radius: 20px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 40px;
+            color: #222;
+        }
+    }
+}
+
+#footer.dark {
+    padding: 0%;
+    background: #222;
+
+
+    .info {
+        padding: 80px 0;
+
+        .title {
+            margin: 0;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: normal;
+            font-size: 14px;
+            color: white;
+        }
+
+        .common-list {
+            li {
+                border-bottom: 1px solid #333;
+            }
+
+            a {
+                display: block;
+                color: #a2a2a2;
+                text-decoration: none;
+                text-transform: capitalize;
+                line-height: 45px;
+                transition: all .2s linear;
+
+                &:hover {
+                    color: basic.$branding-color;
+                }
+
+                &::before {
+                    content: ">";
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .thumbnails li {
+            float: left;
+            line-height: 0;
+
+            a {
+                display: inline-block;
+                margin: 0 10px 10px 0;
+            }
+        }
+
+    }
+
+    p {
+        margin-top: 20px;
+        color: basic.$dark-footer-word-color;
+    }
+
+    .bottom {
+        padding: 35px 0;
+        background: #1b1b1b;
+
+        .title {
+            color: basic.$dark-footer-word-color;
+            text-transform: capitalize;
+            letter-spacing: 0;
+            margin-top: 10px;
+        }
+
+        .important {
+            a {
+                color: white;
+                text-transform: capitalize;
+                text-decoration: none;
+                transition: all .2s linear;
+
+                &:hover {
+                    color: basic.$branding-color;
+                }
+            }
+
+        }
+    }
+
+    .social-media {
+        a {
+            margin: 0;
+            margin-left: 10px;
+            border-color: basic.$dark-footer-word-color;
+            font-size: 20px;
+            color: basic.$dark-footer-word-color;
+
+        }
+    }
+}
+
+#go-top {
+    position: fixed;
+
+    /* 設定position:fixed後，inline element會變成 inline-block element！ */
+    right: 20px;
+    bottom: 35px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    color: #fff;
+    transition: all .2s linear;
+
+    &:hover {
+        background: basic.$branding-color;
+    }
+}

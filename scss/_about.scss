@@ -1,0 +1,43 @@
+@use 'basic';
+
+
+
+.about {
+    #content {
+        .feature {
+            padding: 100px 0;
+            background-image: url(https://picsum.photos/id/851/1920/1080);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 50%;
+        }
+
+        .gray-bg {
+            padding: 100px 0;
+            text-align: center;
+
+            .count {
+                font-size: 36px;
+            }
+
+            h4 {
+                margin: 0;
+                color: #323232;
+                text-transform: uppercase;
+                font-weight: normal;
+            }
+        }
+
+        .clients {
+            padding: 100px 0;
+        }
+
+    }
+
+    .summary {
+        i {
+            font-size: 36px;
+        }
+    }
+}

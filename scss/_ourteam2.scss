@@ -1,0 +1,49 @@
+@use 'basic';
+
+.ourteam {
+    #content {
+
+        .team-member {
+            .intro {
+                text-align: center;
+            }
+
+            .subtitle {
+                width: 60%;
+                font-size: 26px;
+            }
+        }
+
+        .offer {
+            padding: 0;
+            padding-bottom: 100px;
+
+            .gray-bg {
+                background: #f5f5f5;
+
+                .for {
+                    padding: 40px;
+                }
+
+                .summer {
+                    float: left;
+
+                    h3 {
+                        margin: 0px;
+                        font-size: 18px;
+
+                        .gold {
+                            color: basic.$branding-color;
+                        }
+                    }
+                }
+
+                .button {
+                    float: right;
+                    margin: 0px;
+
+                }
+            }
+        }
+    }
+}

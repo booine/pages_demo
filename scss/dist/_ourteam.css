@@ -1,0 +1,31 @@
+.ourteam #content .team-member .intro {
+  text-align: center;
+}
+.ourteam #content .team-member .subtitle {
+  width: 60%;
+  font-size: 26px;
+}
+.ourteam #content .offer {
+  padding: 0;
+  padding-bottom: 100px;
+}
+.ourteam #content .offer .gray-bg {
+  background: #f5f5f5;
+}
+.ourteam #content .offer .gray-bg .for {
+  padding: 40px;
+}
+.ourteam #content .offer .gray-bg .summer {
+  float: left;
+}
+.ourteam #content .offer .gray-bg .summer h3 {
+  margin: 0px;
+  font-size: 18px;
+}
+.ourteam #content .offer .gray-bg .summer h3 .gold {
+  color: #d6b161;
+}
+.ourteam #content .offer .gray-bg .button {
+  float: right;
+  margin: 0px;
+}

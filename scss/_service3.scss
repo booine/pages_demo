@@ -1,0 +1,115 @@
+@use 'basic';
+
+.service {
+    #header {
+        position: absolute;
+        width: 100%;
+    }
+
+    #content {
+        .header {
+            background-image: url(https://dummyimage.com/1920x1080/f5f5f5/ffffff);
+        }
+
+        .services,
+        .special-services,
+        .pricing {
+            padding: 100px 0;
+        }
+
+        .services {
+            .full-col {
+                >div {
+                    padding: 0;
+                    padding: 50px;
+
+                    &:hover {
+                        background-color: black;
+
+                        .title {
+                            color: white;
+                        }
+
+                        i {
+                            color: basic.$branding-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .special-services {
+
+            .title,
+            .subtitle {
+                margin: 0;
+            }
+
+            .title {
+                font-size: 16px;
+                color: basic.$branding-color;
+            }
+
+            .subtitle {
+                padding-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: normal;
+                font-size: 18px;
+            }
+
+            p {
+                margin-bottom: 30px;
+            }
+
+            .big-dot {
+                li {
+                    float: left;
+                    padding-bottom: 10px;
+                    width: 50%;
+                    line-height: 1.5;
+
+                    &::before {
+                        font-family: 'fontello';
+                        content: '\f10c';
+                        padding-right: 10px;
+                        color: #757575;
+                    }
+                }
+
+
+            }
+
+        }
+
+        .special-offer {
+            padding: 60px 0;
+
+            .promo-info {
+                float: left;
+
+                .title {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+
+                    em {
+                        font-style: normal;
+                        color: basic.$branding-color;
+                    }
+
+                }
+
+                .desc {
+                    color: basic.$gray-text;
+                }
+            }
+
+            .promo-button {
+                float: right;
+                margin: 0px;
+            }
+
+        }
+    }
+
+}
